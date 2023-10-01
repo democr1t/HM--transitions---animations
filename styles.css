@@ -1,3 +1,8 @@
+:root{
+    --pseudo-display: none;
+    --button-display: block;
+}
+
 #submit::before {
     content: '';
     width: 20px;
@@ -5,7 +10,7 @@
     border: 5px solid #FFF;
     border-bottom-color: #FF3D00;
     border-radius: 50%;
-    display: inline-block;
+    display: var(--pseudo-display);
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
     }
