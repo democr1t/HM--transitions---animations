@@ -1,6 +1,5 @@
 
 const button = document.getElementById('submit')
-console.log(button)
 let isLoading = false;
 
 button.addEventListener('click', () => {
@@ -18,5 +17,4 @@ button.addEventListener('click', () => {
         root.style.setProperty("--pseudo-display", 'none');
         button.innerHTML = "Submit";
     }
-
 })
