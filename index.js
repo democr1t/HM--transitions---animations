@@ -36,3 +36,9 @@ typeButton.addEventListener('click', () =>{
         //если успеть нажать еще раз, то текст берется текущий, хотя переменная константа, почему?
     }, 10);
 })
+
+const packman = document.getElementById('packman')
+const buttonTop = document.getElementById('top')
+buttonTop.addEventListener('click', () => {
+    packman.style.animation = 'moveTop linear 0ms 1 normal both'
+})
