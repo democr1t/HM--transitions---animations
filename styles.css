@@ -37,8 +37,35 @@
     display: var(--pseudo-display);
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    }
+}
 
+
+div.tooltip-div::before {
+    content: attr(data-fullname);
+    position: absolute;
+    display: none;
+    color: red;
+    text-align: left;
+}
+    
+div.tooltip-div:hover::before {
+    display: inline-block; 
+    font-size: larger;
+    margin-left: 40px;
+}
+
+.moving-tiles{
+    display: grid;
+     grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    background-color: red;
+    width: max-content;
+    grid-gap: 1px;
+}
+
+.moving-tiles > * {
+    background-color: #ccc;
+  }
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
