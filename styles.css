@@ -1,6 +1,10 @@
 :root{
     --pseudo-display: none;
     --button-display: block;
+    --packmanRow: 3;
+    --packmanColumn: 2;
+    --packmanFutureRow: 0;
+    --packmanFutureColumn: 0;
 }
 
 .loader {
@@ -68,7 +72,12 @@ div.tooltip-div:hover::before {
   }
 
 #packman {
+    background-color: blue;
+    height: 20px;
+    width: 20px;
     position: relative;
+    grid-row: var(--packmanRow);
+    grid-column: var(--packmanColumn);
     /* animation: moveRight linear 0ms 1 normal forwards ; */
 }  
 @keyframes rotation {
@@ -91,38 +100,13 @@ div.tooltip-div:hover::before {
     }
 }
 
-@keyframes moveTop{
+@keyframes movePackman{
     from {       
-        transform: translate3d(0);
+        grid-column: var(--packmanColumn);
+        grid-row: var(--packmanRow);
     }
     to {
-        transform: translate3d(0, 10px, 0);
-    }
-}
-
-@keyframes moveDown{
-    from {       
-        transform: translate3d(0);
-    }
-    to {
-        transform: translate3d(0, -10px, 0);
-    }
-}
-
-@keyframes moveLeft{
-    from {       
-        transform: translate3d(0);
-    }
-    to {
-        transform: translate3d(-10px, 0px, 0);
-    }
-}
-
-@keyframes moveRight{
-    from {       
-        transform: translate3d(0);
-    }
-    to {
-        transform: translate3d(10px, 0px, 0);
+        grid-column: var(--packmanFutureColumn);
+        grid-row: var(--packmanFutureRow);
     }
 }

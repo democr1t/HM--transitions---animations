@@ -1,9 +1,10 @@
 
 const button = document.getElementById('submit')
 let isLoading = false;
+const root = document.querySelector(":root");
 
 button.addEventListener('click', () => {
-    const root = document.querySelector(":root");
+   
 
     isLoading ? isLoading = false : isLoading = true;
 
@@ -38,7 +39,28 @@ typeButton.addEventListener('click', () =>{
 })
 
 const packman = document.getElementById('packman')
+
 const buttonTop = document.getElementById('top')
 buttonTop.addEventListener('click', () => {
-    packman.style.animation = 'moveTop linear 0ms 1 normal both'
+  
+    // var bodyStyles = window.getComputedStyle(document.root);
+    // var packmanRow = bodyStyles.getPropertyValue('--packmanRow');
+    // var packmanColumn = bodyStyles.getPropertyValue('--packmanColumn');
+    // var packmanFutureRow = bodyStyles.getPropertyValue('--packmanFutureRow');
+    // var packmanFutureColumn = bodyStyles.getPropertyValue('--packmanFutureColumn');
+
+    root.style.setProperty("--packmanFutureRow", root.style.getPropertyValue());
+    root.style.setProperty("--packmanFutureColumn", packmanColumn);
+    packman.style.animation = 'movePackman linear 0ms 1 normal both'
+    root.style.setProperty("--packmanRow", packmanFutureRow + 1);
+    root.style.setProperty("--packmanColumn", packmanFutureColumn);
+})
+
+const buttonDown = document.getElementById('down')
+buttonDown.addEventListener('click', () => {
+    root.style.setProperty("--packmanFutureRow", 2);
+    // root.style.setProperty("--packmanFutureColumn", );
+    packman.style.animation = 'movePackman linear 0ms 1 normal both'
+    root.style.setProperty("--packmanRow", 2);
+    // root.style.setProperty("--packmanColumn", packman.style.gridColumn);
 })
